@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c5ef3f50f27e5fb4eb2a4d60a92a7b4b, type: 3}
-  m_Name: Mauam
+  m_Name: Maoam
   m_EditorClassIdentifier: 
-  m_name: Mauam
+  m_name: Maoam
   m_image: {fileID: 0}
   m_max_number: 7

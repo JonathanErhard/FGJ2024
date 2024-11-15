@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Eisen
   m_EditorClassIdentifier: 
   m_name: Eisen
-  m_image: {fileID: 0}
+  m_image: {fileID: 21300000, guid: e2fdecbd081062646bea98a7e6bcd8d0, type: 3}
   m_max_number: 2
+  Collect_audio: {fileID: 0}

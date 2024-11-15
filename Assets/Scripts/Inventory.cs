@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UIElements;
 using UnityEngine;
-public class Inventory : MonoBehaviour
+public class Inventory
 {
-    Dictionary<RessourceSO, int> m_ressource_map;
+    private Dictionary<RessourceSo, int> m_ressource_map;
 
-    bool add_ressource(RessourceSO p_ressource, int p_count)
+    public bool add_ressource(RessourceSo p_ressource, int p_count)
     {
         if (!m_ressource_map.ContainsKey(p_ressource))
         {
@@ -20,7 +20,7 @@ public class Inventory : MonoBehaviour
         m_ressource_map[p_ressource] = current_count + current_count;
         return true;
     }
-    bool remove_ressource(RessourceSO p_ressource, int p_count)
+    public bool remove_ressource(RessourceSo p_ressource, int p_count)
     {
         if (!m_ressource_map.ContainsKey(p_ressource))
         {

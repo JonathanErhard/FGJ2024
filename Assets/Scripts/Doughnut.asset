@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Doughnut
   m_EditorClassIdentifier: 
   m_name: Doughnut
-  m_image: {fileID: 0}
+  m_image: {fileID: 21300000, guid: 099672538383f0145a09d287cf3043e2, type: 3}
   m_max_number: 10
