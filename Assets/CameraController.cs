@@ -10,8 +10,8 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = PlayerController.getInstance();
-        PlayerCamera = GetComponentInChildren<Camera>();
+        player = PlayerController.Instance;
+
         SetUpCamera();
     }
 
@@ -23,6 +23,7 @@ public class CameraController : MonoBehaviour
 
     private void SetUpCamera()
     {
+        PlayerCamera = GetComponentInChildren<Camera>();
         PlayerCamera.transform.position = new Vector3(-16, 25, -15);
         PlayerCamera.transform.rotation = new Quaternion(0.353553385f, 0.353553385f, -0.146446601f, 0.853553474f);
     }

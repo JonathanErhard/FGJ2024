@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private static PlayerController instance;
+    #region singleton region
+    public static PlayerController Instance { get; private set; }
+    public PlayerController()
+    {
+        Instance = this;
+    }
+    #endregion
 
     public BaseControlls Controlls { get; set; }
     public Rigidbody Rigidbody { get; set; }
@@ -117,24 +123,16 @@ public class PlayerController : MonoBehaviour
     {
         Rigidbody = GetComponent<Rigidbody>();
 
-        instance = this;
-
         health = maxHealth;
         IsInBase = true;
 
         print("SetUp");
     }
 
-    public static PlayerController getInstance()
-    {
-        if(instance != null)
-        {
-            return instance;
-        } else
-        {
-            return null;
-        }
 
-     
+    public static float GetDistanceToTrans(Transform trans)
+    {
+        return Instance == null ? float.MaxValue :
+            Vector3.Distance(Instance.transform.position, trans.position);
     }
 }

@@ -14,7 +14,7 @@ public class AudioController : MonoBehaviour
     void Start()
     {
         AudioSource = GetComponent<AudioSource>();
-        player = PlayerController.getInstance();
+        player = PlayerController.Instance;
     }
 
     // Update is called once per frame

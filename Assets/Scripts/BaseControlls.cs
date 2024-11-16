@@ -12,6 +12,6 @@ public class BaseControlls : MonoBehaviour
 
     void Start()
     {
-        PlayerController.getInstance().Controlls = this;
+        PlayerController.Instance.Controlls = this;
     }
 }
