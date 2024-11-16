@@ -9,7 +9,7 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = PlayerController.getInstance();
+        player = PlayerController.Instance;
     }
 
     // Update is called once per frame
@@ -17,7 +17,7 @@ public class CameraController : MonoBehaviour
     {
         if(player == null)
         {
-            player = PlayerController.getInstance();
+            player = PlayerController.Instance;
         } else
         {
             transform.position = player.transform.position;

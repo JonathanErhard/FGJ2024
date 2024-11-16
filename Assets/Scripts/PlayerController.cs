@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private static PlayerController instance;
+    #region singleton region
+    public static PlayerController Instance { get; private set; }
+    public PlayerController()
+    {
+        Instance = this;
+    }
+    #endregion
 
     public BaseControlls Controlls { get; set; }
     public Rigidbody Rigidbody { get; set; }
@@ -51,16 +57,13 @@ public class PlayerController : MonoBehaviour
         float vertical = Controlls.Vertical;
         float horizontal = Controlls.Horizontal;
         
-        if(vertical != 0 || horizontal != 0)
+        if (vertical != 0 || horizontal != 0)
         {
-            if(vertical != 0 && horizontal != 0)
+            if (vertical != 0 && horizontal != 0)
             {
                 vertical *= 0.75f;
                 horizontal *= 0.75f;
             }
-
-            print(vertical + "/" + horizontal);
-
 
             float adjustedHorizontalInput = (horizontal + vertical) / Mathf.Sqrt(2);
             float adjustedVerticalInput = (vertical - horizontal) / Mathf.Sqrt(2);
@@ -88,22 +91,11 @@ public class PlayerController : MonoBehaviour
     private void SetUpController()
     {
         Rigidbody = GetComponent<Rigidbody>();
-
-        instance = this;
-
-        print("SetUp");
     }
 
-    public static PlayerController getInstance()
+    public static float GetDistanceToTrans(Transform trans)
     {
-        if(instance != null)
-        {
-            return instance;
-        } else
-        {
-            return null;
-        }
-
-     
+        return Instance == null ? float.MaxValue :
+            Vector3.Distance(Instance.transform.position, trans.position);
     }
 }
