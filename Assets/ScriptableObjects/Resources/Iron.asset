@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9618f31a9d7765f469c7f128751ba2c1, type: 3}
-  m_Name: Donut
+  m_Name: Iron
   m_EditorClassIdentifier: 
-  m_name: Donut
-  m_image: {fileID: 0}
-  m_max_number: 5
+  Name: 
+  Image: {fileID: 0}
+  MaxCount: 0
+  SfxCollect: {fileID: 0}

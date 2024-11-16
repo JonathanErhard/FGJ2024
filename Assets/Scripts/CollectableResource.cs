@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ressource : MonoBehaviour
+public class CollectableResource : MonoBehaviour
 {
-    Inventory Inventory;
-    RessourceSo RessourceSo;
+    InventoryController Inventory;
+    ResourceSo RessourceSo;
 
-    void start()
+    void Start()
     {
         //inventory = //TODO
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (Inventory.add_ressource(RessourceSo, 1))
+        if (Inventory.AddResource(RessourceSo, 1))
         {
             Destroy(transform.parent.gameObject);
         }
