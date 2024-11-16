@@ -5,27 +5,28 @@ using DentedPixel;
 
 public class Alien : MonoBehaviour
 {
-
-
     [SerializeField] private float hunger = 1;
 
-    // Start is called before the first frame update
+    private float _startPosY;
+
     void Start()
     {
-        //LeanTween.delayedCall(gameObject, 0.2f, alien_movement);
-        //LeanTween.moveSplineLocal(this.gameObject, new Vector3[]{Vector3.zero, hunger * Vector3.up, Vector3.zero}, 1.0).setOnCompleteOnStart(true).setRepeat(-1);
+        _startPosY = transform.position.y;
+
+        AnimateJump();
     }
 
-    // Update is called once per frame
+    private void AnimateJump()
+    {
+        LeanTween.moveY(gameObject, _startPosY + 5, 1f)
+            .setFrom(_startPosY)
+            .setEaseInOutSine()
+            .setLoopPingPong(1)
+            .setOnComplete(() => AnimateJump());
+    }
+
     void Update()
     {
         hunger -= Time.deltaTime * 0.01f;
     }
-    /*
-    void alien_movement(){
-        LeanTween.delayedCall(gameObject, 14f, ()=>{
-            LeanTween.moveSplineLocal(gameObject, {Vector3.zero, Vector3.Up * hunger, Vector3.zero}, 1);
-        }).setOnCompleteOnStart(true).setRepeat(-1);
-    }
-    */
 }
