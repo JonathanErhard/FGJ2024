@@ -15,18 +15,21 @@ public class PlayerController : MonoBehaviour
     public BaseControlls Controlls { get; set; }
     public Rigidbody Rigidbody { get; set; }
     public Collider Collider { get; set; }
-    public Camera PlayerCamera { get; set; }
 
     [SerializeField] GameObject PlayerModel;
 
-    [SerializeField] int MovementSpeed = 5;
-
     [SerializeField] Animator animator;
+
+
+    [SerializeField] int MovementSpeed = 5;
+    [SerializeField] float maxHealth = 60;
+    [SerializeField] float health;
+
+    [SerializeField] public bool IsInBase { get; set; }
 
     private Vector3 LastDirection;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         SetUpController();
     }
@@ -41,6 +44,14 @@ public class PlayerController : MonoBehaviour
         if(Controlls.Build != 0)
         {
             ToggleBuildMenu();
+        }
+
+        if(!IsInBase)
+        {
+            if(!DrainHealth())
+            {
+                GameOver();
+            }
         }
     }
 
@@ -57,13 +68,16 @@ public class PlayerController : MonoBehaviour
         float vertical = Controlls.Vertical;
         float horizontal = Controlls.Horizontal;
         
-        if (vertical != 0 || horizontal != 0)
+        if(vertical != 0 || horizontal != 0)
         {
-            if (vertical != 0 && horizontal != 0)
+            if(vertical != 0 && horizontal != 0)
             {
                 vertical *= 0.75f;
                 horizontal *= 0.75f;
             }
+
+            print(vertical + "/" + horizontal);
+
 
             float adjustedHorizontalInput = (horizontal + vertical) / Mathf.Sqrt(2);
             float adjustedVerticalInput = (vertical - horizontal) / Mathf.Sqrt(2);
@@ -88,10 +102,33 @@ public class PlayerController : MonoBehaviour
         print("Toggle build menu");
     }
 
+    private bool DrainHealth()
+    {
+        health -= 1 * Time.deltaTime;
+
+        if(health <= 0)
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    private void GameOver()
+    {
+        Destroy(gameObject);
+    }
+
     private void SetUpController()
     {
         Rigidbody = GetComponent<Rigidbody>();
+
+        health = maxHealth;
+        IsInBase = true;
+
+        print("SetUp");
     }
+
 
     public static float GetDistanceToTrans(Transform trans)
     {
