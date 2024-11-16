@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9618f31a9d7765f469c7f128751ba2c1, type: 3}
   m_Name: Iron
   m_EditorClassIdentifier: 
-  Name: 
-  Image: {fileID: 0}
-  MaxCount: 0
+  Title: Iron
+  Image: {fileID: 21300000, guid: e2fdecbd081062646bea98a7e6bcd8d0, type: 3}
+  MaxCount: 5
   SfxCollect: {fileID: 0}

@@ -15,6 +15,8 @@ MonoBehaviour:
   Title: Producer Test
   Description: A test producer
   Prefab: {fileID: 119230341378475884, guid: 046f4ca8803bea8489e9d1f7bc0540b3, type: 3}
-  NeedsResources: []
+  NeedsResources:
+  - {fileID: 11400000, guid: 02873af90a131a74a87b0c576de32a64, type: 2}
+  - {fileID: 11400000, guid: 71721076e4fda1a43945306efba9bc0e, type: 2}
   ProducesResources: {fileID: 11400000, guid: 71721076e4fda1a43945306efba9bc0e, type: 2}
   TimeUntilProductionInSecs: 5

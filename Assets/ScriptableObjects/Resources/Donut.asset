@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9618f31a9d7765f469c7f128751ba2c1, type: 3}
   m_Name: Donut
   m_EditorClassIdentifier: 
-  m_name: Donut
-  m_image: {fileID: 21300000, guid: 099672538383f0145a09d287cf3043e2, type: 3}
-  m_max_number: 9
+  Title: Donut
+  Image: {fileID: 21300000, guid: 099672538383f0145a09d287cf3043e2, type: 3}
+  MaxCount: 5
+  SfxCollect: {fileID: 0}

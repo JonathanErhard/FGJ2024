@@ -2,9 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UIElements;
 using UnityEngine;
-public class InventoryController
+public class InventoryController : MonoBehaviour
 {
-    private Dictionary<ResourceSo, int> _resourceDict;
+    #region singleton region
+    public static InventoryController Instance;
+    public InventoryController()
+    {
+        Instance = this;
+    }
+    #endregion
+
+    private Dictionary<ResourceSo, int> _resourceDict = new();
 
     public bool AddResource(ResourceSo resource, int count)
     {
@@ -35,4 +43,15 @@ public class InventoryController
         _resourceDict[p_ressource] = current_count - current_count;
         return true;
     }
+
+    public bool HasResources(List<ResourceSo> resources)
+    {
+        foreach (var resource in resources)
+        {
+            if (!_resourceDict.ContainsKey(resource) || _resourceDict[resource] < 1)
+                return false;
+        }
+        return true;
+    }
+    
 }

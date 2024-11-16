@@ -4,7 +4,7 @@
 
 public class ResourceSo : ScriptableObject
 {
-    public string Name;
+    public string Title;
     public Sprite Image;
     public int MaxCount;
     public AudioSource SfxCollect;
