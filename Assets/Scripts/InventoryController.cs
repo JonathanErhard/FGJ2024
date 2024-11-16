@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UIElements;
 using UnityEngine;
+using UnityEngine.Events;
 public class InventoryController : MonoBehaviour
 {
     #region singleton region
@@ -12,35 +13,36 @@ public class InventoryController : MonoBehaviour
     }
     #endregion
 
-    private Dictionary<ResourceSo, int> _resourceDict = new();
+    public UnityEvent OnStateUpdate = new UnityEvent();
+
+    public Dictionary<ResourceSo, int> ResourcesDict = new Dictionary<ResourceSo, int>();
 
     public bool AddResource(ResourceSo resource, int count)
     {
-        if (!_resourceDict.ContainsKey(resource))
+        if (!ResourcesDict.ContainsKey(resource))
         {
-            _resourceDict.Add(resource, 0);
+            ResourcesDict.Add(resource, count);
         }
-        int current_count = _resourceDict[resource];
-        if (current_count + count > resource.MaxCount)
+        else
         {
-            return false;
+            ResourcesDict[resource] += count;
         }
-        _resourceDict[resource] = current_count + current_count;
+
+        OnStateUpdate.Invoke();
         return true;
     }
 
-    public bool RemoveResource(ResourceSo p_ressource, int p_count)
+    public bool RemoveResource(ResourceSo resource, int count)
     {
-        if (!_resourceDict.ContainsKey(p_ressource))
+        if (!ResourcesDict.ContainsKey(resource) || ResourcesDict[resource] < count)
         {
+            OnStateUpdate.Invoke();
             return false;
         }
-        int current_count = _resourceDict[p_ressource];
-        if (current_count - p_count < 0)
-        {
-            return false;
-        }
-        _resourceDict[p_ressource] = current_count - current_count;
+
+        ResourcesDict[resource] -= count;
+
+        OnStateUpdate.Invoke();
         return true;
     }
 
@@ -48,10 +50,13 @@ public class InventoryController : MonoBehaviour
     {
         foreach (var resource in resources)
         {
-            if (!_resourceDict.ContainsKey(resource) || _resourceDict[resource] < 1)
+            if (!ResourcesDict.ContainsKey(resource) || ResourcesDict[resource] < 1)
+            {
+                OnStateUpdate.Invoke();
                 return false;
+            }
         }
+        OnStateUpdate.Invoke();
         return true;
     }
-    
 }

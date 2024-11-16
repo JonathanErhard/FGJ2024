@@ -41,6 +41,8 @@ public class UiBuildableProducerInfo : MonoBehaviour
         // Update ui on buildable state update
         Buildable.OnStateUpdate.AddListener(() =>
         {
+            print("OnStateUpdate");
+
             ButtonProvideResources.interactable =
                     !Buildable.IsWorking &&
                     InventoryController.Instance.HasResources(_buildableSo.NeedsResources);

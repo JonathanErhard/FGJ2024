@@ -63,9 +63,6 @@ public class PlayerController : MonoBehaviour
                 horizontal *= 0.75f;
             }
 
-            print(vertical + "/" + horizontal);
-
-
             float adjustedHorizontalInput = (horizontal + vertical) / Mathf.Sqrt(2);
             float adjustedVerticalInput = (vertical - horizontal) / Mathf.Sqrt(2);
 
@@ -88,8 +85,6 @@ public class PlayerController : MonoBehaviour
     private void SetUpController()
     {
         Rigidbody = GetComponent<Rigidbody>();
-
-        print("SetUp");
     }
 
     public static float GetDistanceToTrans(Transform trans)
