@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private static PlayerController instance;
+
     public BaseControlls Controlls { get; set; }
     public Rigidbody Rigidbody { get; set; }
     public Collider Collider { get; set; }
@@ -12,6 +14,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject PlayerModel;
 
     [SerializeField] int MovementSpeed = 5;
+
+    [SerializeField] Animator animator;
 
     private Vector3 LastDirection;
 
@@ -49,6 +53,12 @@ public class PlayerController : MonoBehaviour
         
         if(vertical != 0 || horizontal != 0)
         {
+            if(vertical != 0 && horizontal != 0)
+            {
+                vertical *= 0.75f;
+                horizontal *= 0.75f;
+            }
+
             print(vertical + "/" + horizontal);
 
 
@@ -61,8 +71,12 @@ public class PlayerController : MonoBehaviour
 
             LastDirection = vector3;
 
-            PlayerModel.transform.rotation = Quaternion.LookRotation(LastDirection);
+            PlayerModel.transform.rotation = Quaternion.LookRotation(LastDirection * -1);
 
+            animator.Play("Walk");
+        } else
+        {
+            animator.Play("Empty");
         }
     }
 
@@ -75,6 +89,21 @@ public class PlayerController : MonoBehaviour
     {
         Rigidbody = GetComponent<Rigidbody>();
 
+        instance = this;
+
         print("SetUp");
+    }
+
+    public static PlayerController getInstance()
+    {
+        if(instance != null)
+        {
+            return instance;
+        } else
+        {
+            return null;
+        }
+
+     
     }
 }
