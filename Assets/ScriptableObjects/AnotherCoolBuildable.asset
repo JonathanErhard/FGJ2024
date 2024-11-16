@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db51a62c514e0514b9c5cdcd6c4b2590, type: 3}
+  m_Name: AnotherCoolBuildable
+  m_EditorClassIdentifier: 
+  Title: AnotherCoolBuildable
+  Description: is cool, too
+  Image: {fileID: 0}
+  Prefab: {fileID: 7535269724595728574, guid: 202f0363d457ece499acc48425d54594, type: 3}
