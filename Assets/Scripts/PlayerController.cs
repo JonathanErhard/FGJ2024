@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    #region singleton region
+    public static PlayerController Instance { get; private set; }
+    public PlayerController()
+    {
+        Instance = this;
+    }
+    #endregion
+
     public BaseControlls Controlls { get; set; }
     public Rigidbody Rigidbody { get; set; }
     public Collider Collider { get; set; }
@@ -25,7 +33,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         HandleInput();
-        
+
         Move();
     }
 
@@ -40,8 +48,8 @@ public class PlayerController : MonoBehaviour
     {
         float vertical = Controlls.Vertical;
         float horizontal = Controlls.Horizontal;
-        
-        if(vertical != 0 || horizontal != 0)
+
+        if (vertical != 0 || horizontal != 0)
         {
             if (vertical != 0 && horizontal != 0)
             {
@@ -67,5 +75,11 @@ public class PlayerController : MonoBehaviour
         Rigidbody = GetComponent<Rigidbody>();
 
         print("SetUp");
+    }
+
+    public static float GetDistanceToTrans(Transform trans)
+    {
+        return Instance == null ? float.MaxValue :
+            Vector3.Distance(Instance.transform.position, trans.position);
     }
 }

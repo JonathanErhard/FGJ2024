@@ -28,12 +28,15 @@ public class BuildCursor : MonoBehaviour
             transform.position = ray.GetPoint(distance);
 
         // Build on click if not over UI
-        if(Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
+        if(Input.GetMouseButtonDown(0))
             Build();
     }
     
     public void Build()
     {
+        if (EventSystem.current.IsPointerOverGameObject() || CurrentBuildable == null)
+            return;
+
         Instantiate(CurrentBuildable.Prefab, transform.position, transform.rotation);
     }
 

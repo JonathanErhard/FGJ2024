@@ -15,8 +15,8 @@ public class UiPanelBuildable : MonoBehaviour
     void Start()
     {
         _textTitle.text = BuildableSo.Title;
-        _spriteImage.sprite = BuildableSo.Image;
 
+        // Generate preview of buildable
         RuntimePreviewGenerator.OrthographicMode = true;
         var texturePreview = RuntimePreviewGenerator.GenerateModelPreview(BuildableSo.Prefab.transform);
         _spriteImage.sprite = Sprite.Create(texturePreview, new Rect(0, 0, texturePreview.width, texturePreview.height), new Vector2(0.5f, 0.5f));

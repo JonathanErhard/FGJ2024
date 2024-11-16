@@ -8,7 +8,7 @@ using UnityEngine;
 namespace Assets.Scripts.ScriptableObjects
 {
     [CreateAssetMenu(fileName = "ressource", menuName = "ScriptableObjects/RessourceSO", order = 1)]
-    public class RessourceSO : ScriptableObject
+    public class RessourceSo : ScriptableObject
     {
         public string m_name;
         public Sprite m_image;

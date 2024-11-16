@@ -1,3 +1,5 @@
+using Assets.Scripts.ScriptableObjects;
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = nameof(BuildableSo), menuName = "ScriptableObjects/BuildableSo", order = 1)]
@@ -5,10 +7,10 @@ public class BuildableSo : ScriptableObject
 {
     public string Title;
     public string Description;
-    public Sprite Image;
     public GameObject Prefab;
+    public List<BuildableRequiredResource> RequiredResources;
 
-    class BuildableRequiredResource
+    public class BuildableRequiredResource
     {
         // TODO: Make this ResourceSo
         public string Resource { get; set; }

@@ -11,7 +11,7 @@ public class BaseControlls : MonoBehaviour
     void Awake()
     {
         PlayerController character;
-
+        
         if(TryGetComponent<PlayerController>(out character))
         {
             character.Controlls = this;

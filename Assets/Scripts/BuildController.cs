@@ -23,7 +23,7 @@ public class BuildController : MonoBehaviour
     public void SetBuildable(BuildableSo buildableSo)
     {
         var buildable = Instantiate(buildableSo.Prefab);
-        _cursor.Kill();
+        _cursor?.Kill();
         _cursor = buildable.AddComponent<BuildCursor>();
         _cursor.CurrentBuildable = buildableSo;
     }
