@@ -27,6 +27,11 @@ public class PlayerController : MonoBehaviour
         HandleInput();
         
         Move();
+
+        if(Controlls.Build != 0)
+        {
+            ToggleBuildMenu();
+        }
     }
 
     private void HandleInput()
@@ -34,6 +39,7 @@ public class PlayerController : MonoBehaviour
         Controlls.Horizontal = Input.GetKey(KeyCode.A) ? -1 : Input.GetKey(KeyCode.D) ? 1 : 0;
         Controlls.Vertical = Input.GetKey(KeyCode.W) ? 1 : Input.GetKey(KeyCode.S) ? -1 : 0;
         Controlls.Use = Input.GetKey(KeyCode.E) ? 1 : 0;
+        Controlls.Build = Input.GetKeyDown(KeyCode.B) ? 1 : 0;
     }
 
     private void Move()
@@ -43,15 +49,13 @@ public class PlayerController : MonoBehaviour
         
         if(vertical != 0 || horizontal != 0)
         {
-            if (vertical != 0 && horizontal != 0)
-            {
-                vertical *= 0.75f;
-                horizontal *= 0.75f;
-            }
-
             print(vertical + "/" + horizontal);
 
-            Vector3 vector3 = new Vector3(horizontal * MovementSpeed, 0, vertical * MovementSpeed);
+
+            float adjustedHorizontalInput = (horizontal + vertical) / Mathf.Sqrt(2);
+            float adjustedVerticalInput = (vertical - horizontal) / Mathf.Sqrt(2);
+
+            Vector3 vector3 = new Vector3(adjustedHorizontalInput, 0, adjustedVerticalInput) * MovementSpeed;
 
             Rigidbody.velocity = vector3;
 
@@ -60,6 +64,11 @@ public class PlayerController : MonoBehaviour
             PlayerModel.transform.rotation = Quaternion.LookRotation(LastDirection);
 
         }
+    }
+
+    private void ToggleBuildMenu()
+    {
+        print("Toggle build menu");
     }
 
     private void SetUpController()

@@ -8,6 +8,8 @@ public class BaseControlls : MonoBehaviour
     public float Vertical { get; set; }
     public float Use { get; set; }
 
+    public float Build { get; set; }
+
     void Awake()
     {
         PlayerController character;
