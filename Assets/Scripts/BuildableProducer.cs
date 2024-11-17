@@ -10,7 +10,8 @@ public class BuildableProducer : Buildable
     private const float PLAYER_TRIGGER_DISTANCE = 7;
 
     public BuildableProducerSo BuildableSo;
-    public bool IsWorking { get; private set; }
+    public string ActivityMessage = "Active";
+    public bool IsWorking { get; protected set; }
     public float Progress { get; private set; }
     public int ProducedResources { get; private set; }
 
@@ -25,12 +26,10 @@ public class BuildableProducer : Buildable
     public UnityEvent OnStateUpdate = new();
 
     private UiBuildableProducerInfo _uiInfo;
-    private InventoryController _inventory;
 
     void Start()
     {
         _uiInfo = GetComponentInChildren<UiBuildableProducerInfo>();
-        _inventory = InventoryController.Instance;
     }
 
     private void OnEnable()
@@ -40,6 +39,12 @@ public class BuildableProducer : Buildable
 
     void Update()
     {
+        // stupid fix, don't have time to look for bugs now
+        if(_uiInfo == null)
+            _uiInfo = GetComponentInChildren<UiBuildableProducerInfo>();
+
+        _uiInfo.ActivityMessage = ActivityMessage;
+
         if (IsWorking)
         {
             if (Progress < BuildableSo.TimeUntilProductionInSecs)
@@ -52,18 +57,21 @@ public class BuildableProducer : Buildable
                 OnStateUpdate.Invoke();
             }
         }
+        else if (BuildableSo.NeedsResources.Count == 0)
+        {
+            ProvideResources();
+        }
 
         CheckUiInfoVisibility();
     }
 
     public void ProvideResources()
     {
-
-        if (!_inventory.HasResources(BuildableSo.NeedsResources))
+        if (!InventoryController.Instance.HasResources(BuildableSo.NeedsResources))
             return;
 
         foreach (var resource in BuildableSo.NeedsResources)
-            _inventory.RemoveResource(resource, 1);
+            InventoryController.Instance.RemoveResource(resource, 1);
 
         IsWorking = true;
         OnStateUpdate.Invoke();
@@ -71,7 +79,7 @@ public class BuildableProducer : Buildable
 
     public void TakeResources()
     {
-        _inventory.AddResource(BuildableSo.ProducesResources, ProducedResources);
+        InventoryController.Instance.AddResource(BuildableSo.ProducesResources, ProducedResources);
         ProducedResources = 0;
         OnStateUpdate.Invoke();
     }

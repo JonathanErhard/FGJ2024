@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25cef22a50e05a7458b3f58b52bd6ad8, type: 3}
+  m_Name: ApplePieProducer
+  m_EditorClassIdentifier: 
+  Title: Pie Maker
+  Description: Creates apple pies from apples, milk and wheat
+  Prefab: {fileID: 0}
+  NeedsResources:
+  - {fileID: 11400000, guid: d5cb2fd2fc640c64fb19f98dbd0951ae, type: 2}
+  - {fileID: 11400000, guid: 89b77b17d58917d4d8b1573d55984539, type: 2}
+  - {fileID: 11400000, guid: 4eaee1254f6221b4d8ea862bce2f8272, type: 2}
+  ProducesResources: {fileID: 11400000, guid: c8c00e5ed435b1b45abe03bf4af16f96, type: 2}
+  TimeUntilProductionInSecs: 30

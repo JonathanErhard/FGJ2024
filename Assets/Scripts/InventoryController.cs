@@ -15,7 +15,8 @@ public class InventoryController : MonoBehaviour
 
     public UnityEvent OnStateUpdate = new UnityEvent();
 
-    public Dictionary<ResourceSo, int> ResourcesDict = new Dictionary<ResourceSo, int>();
+    public Dictionary<ResourceSo, int> ResourcesDict = new();
+    public List<BuildableSo> Buildables = new();
 
     public bool AddResource(ResourceSo resource, int count)
     {
