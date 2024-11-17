@@ -8033,9 +8033,11 @@ MonoBehaviour:
   CraftableBuildings:
   - {fileID: 11400000, guid: 0692cbf99552a0e44b796791a0b02840, type: 2}
   - {fileID: 11400000, guid: ef45123fe9883e248b1e4c69930a2def, type: 2}
+  - {fileID: 11400000, guid: 90f16cdb989ab84438c245ef87f85f47, type: 2}
   - {fileID: 11400000, guid: 9bb2f9c9f2602874ea22a5511604029f, type: 2}
   - {fileID: 11400000, guid: 8db3ab01459307a4a8cc9298042f32cc, type: 2}
   - {fileID: 11400000, guid: f55c4ddff95947e419fd20d3ec5f14c5, type: 2}
+  - {fileID: 11400000, guid: d901f25f64e995e4abd3c31a84d15045, type: 2}
 --- !u!1 &6856579226684883043
 GameObject:
   m_ObjectHideFlags: 0
