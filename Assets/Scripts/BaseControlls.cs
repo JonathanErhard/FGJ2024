@@ -10,16 +10,8 @@ public class BaseControlls : MonoBehaviour
 
     public float Build { get; set; }
 
-    void Awake()
+    void Start()
     {
-        PlayerController character;
-
-        if(TryGetComponent<PlayerController>(out character))
-        {
-            character.Controlls = this;
-        } else
-        {
-            print("No CharacterController found");
-        }
+        PlayerController.Instance.Controlls = this;
     }
 }

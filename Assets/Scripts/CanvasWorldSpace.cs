@@ -7,6 +7,6 @@ public class CanvasWorldSpace : MonoBehaviour
     void Start()
     {
         // hard set rotation so it fits the camera angle
-        transform.rotation = Quaternion.Euler(45,-135,0);
+        transform.rotation = Quaternion.Euler(45,45,0);
     }
 }
