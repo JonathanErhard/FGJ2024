@@ -21,9 +21,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Animator animator;
 
 
-    [SerializeField] int MovementSpeed = 5;
-    [SerializeField] float maxHealth = 60;
-    [SerializeField] float health;
+    [SerializeField] 
+    public int MovementSpeed { get; private set; } = 20;
+    [SerializeField] 
+    public float MaxHealth { get; private set; } = 60;
+    [SerializeField] 
+    float health;
 
     [SerializeField] public bool IsInBase { get; set; }
 
@@ -94,6 +97,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void UpgradeSpeed(int amount = 10)
+    {
+        MovementSpeed += amount;
+    }
+
+    public void UpgradeHealth(int amount = 10)
+    {
+        MaxHealth += amount;
+    }
+
     private void ToggleBuildMenu()
     {
         print("Toggle build menu");
@@ -120,7 +133,7 @@ public class PlayerController : MonoBehaviour
     {
         Rigidbody = GetComponent<Rigidbody>();
 
-        health = maxHealth;
+        health = MaxHealth;
         IsInBase = true;
 
         print("SetUp");
