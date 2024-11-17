@@ -3,9 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
 
 public class TextProcessor : MonoBehaviour
 {
+    #region singleton area
+    public static TextProcessor Instance;
+    public TextProcessor()
+    {
+        Instance = this;
+    }
+    #endregion
 
     private string[] fragments = {"Long ago, this planet was lush and alive. The Ancients harnessed its energy to thrive. But their greed poisoned the land, leaving only a few survivors—tiny creatures like the one in your wheel, carrying the last spark of hope.",
                                   "The Ancients built machines to sustain themselves, but their creations turned on them, consuming the world’s remaining resources. They fled, leaving their technology behind. Somewhere on this planet lies their greatest secret—a way to restore life.",
@@ -18,8 +26,17 @@ public class TextProcessor : MonoBehaviour
     [SerializeField] private Toggle[] FragsToggle;
     [SerializeField] private TMP_Text[] FragTexts;
 
-    [SerializeField] private bool[] all_keys = {false, false, false, false};
-    [SerializeField] private bool[] all_frags = {false, false, false, false};
+    [SerializeField] public bool[] all_keys { get; private set; } = {false, false, false, false};
+    [SerializeField] public bool[] all_frags { get; private set; } = {false, false, false, false};
+
+    public bool AllKeysSet
+    {
+        get
+        {
+            return all_keys.All(key => key) && all_frags.All(frag => frag);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {

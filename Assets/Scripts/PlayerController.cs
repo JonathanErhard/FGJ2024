@@ -25,8 +25,8 @@ public class PlayerController : MonoBehaviour
     public int MovementSpeed { get; private set; } = 20;
     [SerializeField] 
     public float MaxHealth { get; private set; } = 60;
-    [SerializeField] 
-    float health;
+    [SerializeField]
+    public float Health { get; private set; } = 60;
 
     [SerializeField] public bool IsInBase { get; set; }
 
@@ -114,9 +114,9 @@ public class PlayerController : MonoBehaviour
 
     private bool DrainHealth()
     {
-        health -= 1 * Time.deltaTime;
+        Health -= 1 * Time.deltaTime;
 
-        if(health <= 0)
+        if(Health <= 0)
         {
             return false;
         }
@@ -133,7 +133,7 @@ public class PlayerController : MonoBehaviour
     {
         Rigidbody = GetComponent<Rigidbody>();
 
-        health = MaxHealth;
+        Health = MaxHealth;
         IsInBase = true;
 
         print("SetUp");
