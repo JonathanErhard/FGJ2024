@@ -48,7 +48,7 @@ public class UiBuildableCrafting : MonoBehaviour
             var button = panel.GetComponent<Button>();
             button.onClick.AddListener(() =>
             {
-                if (true || InventoryController.Instance.HasResource(BuildingMaterialResource, buildable.MaterialCost))
+                if (InventoryController.Instance.HasResource(BuildingMaterialResource, buildable.MaterialCost))
                 {
                     InventoryController.Instance.AddBuildable(buildable);
                     FillBuildables();
