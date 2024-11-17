@@ -54,4 +54,9 @@ public class TextProcessor : MonoBehaviour
             if(all_frags[i]) FragTexts[i].SetText(encryptFragment(i, all_keys));
         }
     }
+
+    public void setFound(int type, int id){
+        if(type == 0) all_frags[id] = true;
+        if(type == 1) all_keys[id] = true;
+    }
 }
