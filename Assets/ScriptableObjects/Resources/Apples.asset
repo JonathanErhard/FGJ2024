@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9618f31a9d7765f469c7f128751ba2c1, type: 3}
   m_Name: Apples
   m_EditorClassIdentifier: 
-  Title: Wood
+  Title: Apples
   Image: {fileID: 21300000, guid: f835a4069c2c3824caefcbc334f37594, type: 3}
   SfxCollect: {fileID: 0}

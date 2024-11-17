@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9618f31a9d7765f469c7f128751ba2c1, type: 3}
   m_Name: ApplePie
   m_EditorClassIdentifier: 
-  Title: Wood
+  Title: Apple Pie
   Image: {fileID: 21300000, guid: 2003f9eb76655af418d975a0b35877c2, type: 3}
   SfxCollect: {fileID: 0}

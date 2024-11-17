@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9618f31a9d7765f469c7f128751ba2c1, type: 3}
   m_Name: Donut
   m_EditorClassIdentifier: 
-  Title: Wood
+  Title: Donut
   Image: {fileID: 21300000, guid: bc9717cbbae8ca14086e1107ab3aef90, type: 3}
   SfxCollect: {fileID: 0}
