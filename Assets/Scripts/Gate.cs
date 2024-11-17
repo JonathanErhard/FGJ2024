@@ -27,6 +27,7 @@ public class Gate : MonoBehaviour
         if(is_interactable && Input.GetKeyDown(KeyCode.E)){
             player.transform.position = tpTarget.transform.position;
             render.enabled = is_inside;
+            player.GetComponent<PlayerController>().IsInBase = !is_inside;
         }
 
         is_interactable = (player.transform.position - this.gameObject.transform.position).magnitude <= maxDistance;

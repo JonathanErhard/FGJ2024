@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DentedPixel;
+using UnityEngine.UI;
 
 public class Alien : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class Alien : MonoBehaviour
     public float Needyness { get; private set; } = 0.01f;
 
     private float _startPosY;
+
+    [SerializeField] private Slider hungerslider;
 
     void Start()
     {
@@ -50,5 +53,7 @@ public class Alien : MonoBehaviour
         if(Hunger <= 0) Hunger = 0;
 
         Needyness += Time.deltaTime * 0.00001f;
+
+        hungerslider.value = Hunger;
     }
 }

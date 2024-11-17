@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
     public float MaxHealth { get; private set; } = 60;
     [SerializeField]
     public float Health { get; private set; } = 60;
+    [SerializeField] private Slider healthslider;
 
     [SerializeField] public bool IsInBase { get; set; }
 
@@ -56,6 +58,10 @@ public class PlayerController : MonoBehaviour
                 GameOver();
             }
         }
+        else Health = MaxHealth;
+
+        healthslider.maxValue = MaxHealth;
+        healthslider.value = Health;
     }
 
     private void HandleInput()
