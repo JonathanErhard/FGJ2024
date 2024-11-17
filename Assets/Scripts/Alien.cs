@@ -18,7 +18,7 @@ public class Alien : MonoBehaviour
 
     private void AnimateJump()
     {
-        LeanTween.moveY(gameObject, _startPosY + 5, 1f)
+        LeanTween.moveY(gameObject, _startPosY + 5* hunger, 2f-1f*hunger)
             .setFrom(_startPosY)
             .setEaseInOutSine()
             .setLoopPingPong(1)
@@ -28,5 +28,6 @@ public class Alien : MonoBehaviour
     void Update()
     {
         hunger -= Time.deltaTime * 0.01f;
+        if(hunger <= 0) hunger = 0;
     }
 }

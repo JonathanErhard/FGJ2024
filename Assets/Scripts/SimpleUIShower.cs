@@ -11,11 +11,12 @@ public class SimpleUIShower : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private bool is_active;
     [SerializeField] private bool is_interactable;
+    private PlayerController p;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        p = player.GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -25,6 +26,7 @@ public class SimpleUIShower : MonoBehaviour
 
         InteractText.SetActive(is_interactable && !is_active);
         UIPanel.SetActive(is_active);
+        p.enabled = !is_active;
 
         if(is_interactable && Input.GetKeyDown(KeyCode.E)) is_active = true;
         if(is_active && Input.GetKeyDown(KeyCode.Escape)) is_active = false;
