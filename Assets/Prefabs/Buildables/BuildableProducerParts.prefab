@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 288549245289679928}
   - component: {fileID: 5090675064125372093}
   - component: {fileID: 6718684041085274906}
-  - component: {fileID: 2384680157527006007}
+  - component: {fileID: 3194825362700965738}
   m_Layer: 0
-  m_Name: BuildableProducerIron
+  m_Name: BuildableProducerParts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3576280496958273286}
-  - {fileID: 9100830867170749713}
+  - {fileID: 7478484828854721053}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &288549245289679928
@@ -108,7 +108,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2384680157527006007
+--- !u!114 &3194825362700965738
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,11 +117,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6815047049943566434}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a64ddca58ff635d498ab3632082f424e, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d8bffc3042e1fc47a00cb0e6825aa11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BuildableSo: {fileID: 11400000, guid: 0692cbf99552a0e44b796791a0b02840, type: 2}
-  ActivityMessage: 
+  BuildableSo: {fileID: 11400000, guid: d901f25f64e995e4abd3c31a84d15045, type: 2}
+  ActivityMessage: Active
   OnStateUpdate:
     m_PersistentCalls:
       m_Calls: []
@@ -454,7 +454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &8774731752852818682
+--- !u!1001 &6936197812681309686
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -511,8 +511,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0ada08c8b6631348a2e3514397fc217, type: 3}
---- !u!4 &9100830867170749713 stripped
+--- !u!4 &7478484828854721053 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0ada08c8b6631348a2e3514397fc217, type: 3}
-  m_PrefabInstance: {fileID: 8774731752852818682}
+  m_PrefabInstance: {fileID: 6936197812681309686}
   m_PrefabAsset: {fileID: 0}

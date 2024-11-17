@@ -15,7 +15,7 @@ MonoBehaviour:
   Title: Pie Maker
   Description: Creates apple pies from apples, milk and wheat
   MaterialCost: 5
-  Prefab: {fileID: 6815047049943566434, guid: 545b46c325edb964f887068230aa113c, type: 3}
+  Prefab: {fileID: 6815047049943566434, guid: 0f0bfbce4bae0c341a5d0b187505b20a, type: 3}
   NeedsResources:
   - {fileID: 11400000, guid: d5cb2fd2fc640c64fb19f98dbd0951ae, type: 2}
   - {fileID: 11400000, guid: 89b77b17d58917d4d8b1573d55984539, type: 2}

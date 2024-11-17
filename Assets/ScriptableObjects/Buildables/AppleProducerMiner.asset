@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25cef22a50e05a7458b3f58b52bd6ad8, type: 3}
-  m_Name: WoodProducerMiner
+  m_Name: AppleProducerMiner
   m_EditorClassIdentifier: 
-  Title: Woodcutter
-  Description: Fetches wood from nearby trees
+  Title: "Applenator\u2122"
+  Description: Sucks apples from trees
   MaterialCost: 5
-  Prefab: {fileID: 6815047049943566434, guid: 9508aa490ec9f304f98829e87e613978, type: 3}
+  Prefab: {fileID: 6815047049943566434, guid: 67173afc5f9a48d4295fcd0a95f6e15a, type: 3}
   NeedsResources: []
-  ProducesResources: {fileID: 11400000, guid: 330ff3935922f4d41b059f0d8de1aafd, type: 2}
-  TimeUntilProductionInSecs: 10
+  ProducesResources: {fileID: 11400000, guid: d5cb2fd2fc640c64fb19f98dbd0951ae, type: 2}
+  TimeUntilProductionInSecs: 5
