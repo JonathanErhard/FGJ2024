@@ -18,6 +18,8 @@ public class AudioController : MonoBehaviour
     private AudioSource AudioSource;
     private PlayerController player;
 
+    bool inBase = false;
+
     [SerializeField] AudioClip ambientSound;
     [SerializeField] AudioClip baseSound;
 
@@ -33,24 +35,25 @@ public class AudioController : MonoBehaviour
     {
         AudioSource = GetComponent<AudioSource>();
         timeUnitlNext = 0;
-        //player = PlayerController.Instance; //UNCOMMENT TODO
     }
 
     // Update is called once per frame
     void Update()
     {
         timeUnitlNext -= Time.deltaTime;
-        if (timeUnitlNext > 0) //check if audioclip ended
+        if (timeUnitlNext >= 0 && (PlayerController.Instance.IsInBase == inBase)) //check if audioclip ended
         {
             return;
         }
         if (PlayerController.Instance.IsInBase)
         {
             PlayBaseSound();
+            inBase = true;
         }
         else
         {
             PlayAmbientSound();
+            inBase = false;
         }
     }
 
