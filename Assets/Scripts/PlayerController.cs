@@ -42,11 +42,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.R) && Input.GetKey(KeyCode.T))
-            Time.timeScale = 2;
-        else
-            Time.timeScale = 1;
-
         HandleInput();
         
         Move();
