@@ -59,6 +59,9 @@ public class InventoryController : MonoBehaviour
 
         ResourcesDict[resource] -= count;
 
+        if(ResourcesDict[resource] == 0)
+            ResourcesDict.Remove(resource);
+
         OnStateUpdate.Invoke();
         return true;
     }

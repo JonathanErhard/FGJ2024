@@ -5,7 +5,18 @@ using DentedPixel;
 
 public class Alien : MonoBehaviour
 {
-    [SerializeField] private float hunger = 1;
+    #region singleton region
+    public static Alien Instance;
+    public Alien()
+    {
+        Instance = this;
+    }
+    #endregion
+
+    [SerializeField]
+    public float Hunger { get; private set; } = 1;
+
+    public float Needyness { get; private set; } = 0.01f;
 
     private float _startPosY;
 
@@ -18,16 +29,26 @@ public class Alien : MonoBehaviour
 
     private void AnimateJump()
     {
-        LeanTween.moveY(gameObject, _startPosY + 5* hunger, 2f-1f*hunger)
+        LeanTween.moveY(gameObject, _startPosY + 5* Hunger, 2f-1f*Hunger)
             .setFrom(_startPosY)
             .setEaseInOutSine()
             .setLoopPingPong(1)
             .setOnComplete(() => AnimateJump());
     }
 
+    public void Feed(float nutritionValue)
+    {
+        Hunger += nutritionValue/10;
+
+        if (Hunger > 1)
+            Hunger = 1;
+    }
+
     void Update()
     {
-        hunger -= Time.deltaTime * 0.01f;
-        if(hunger <= 0) hunger = 0;
+        Hunger -= Time.deltaTime * Needyness;
+        if(Hunger <= 0) Hunger = 0;
+
+        Needyness += Time.deltaTime * 0.00001f;
     }
 }
