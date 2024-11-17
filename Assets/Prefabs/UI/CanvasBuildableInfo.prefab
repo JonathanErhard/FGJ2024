@@ -2001,11 +2001,13 @@ MonoBehaviour:
   SliderProgress: {fileID: 6923750438665989917}
   ButtonProvideResources: {fileID: 6311856870815480971}
   ButtonTakeResources: {fileID: 2839423113313245931}
+  TextBuildableTitle: {fileID: 0}
   TransRequiredResources: {fileID: 2935704010630786008}
   ImageProducesResource: {fileID: 4863181348288454830}
   TextProducesResourceTitle: {fileID: 1699592927576489172}
   ImageReadyResource: {fileID: 4032237297489576039}
   TextReadyResourceTitle: {fileID: 2948449509171723688}
+  ActivityMessage: Active
 --- !u!1 &7919924979887837957
 GameObject:
   m_ObjectHideFlags: 0
