@@ -46,6 +46,7 @@ public class CollectableCollector : MonoBehaviour
             p.setFound(type, id);
             p.SetUI();
             InteractText.SetActive(false);
+            AudioController.Instance.PlayPickupSound();
             Destroy(this.gameObject);
         }
     }

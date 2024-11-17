@@ -6,6 +6,15 @@ using UnityEngine;
 
 public class AudioController : MonoBehaviour
 {
+    #region singleton region
+    public static AudioController Instance { get; private set; }
+    public AudioController()
+    {
+        Instance = this;
+    }
+
+    #endregion
+
     private AudioSource AudioSource;
     private PlayerController player;
 
@@ -35,7 +44,7 @@ public class AudioController : MonoBehaviour
         {
             return;
         }
-        if (player.IsInBase)
+        if (PlayerController.Instance.IsInBase)
         {
             PlayBaseSound();
         }

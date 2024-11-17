@@ -53,6 +53,8 @@ public class UiBuildableCrafting : MonoBehaviour
                     InventoryController.Instance.AddBuildable(buildable);
                     InventoryController.Instance.RemoveResource(BuildingMaterialResource, buildable.MaterialCost);
                     FillBuildables();
+
+                    AudioController.Instance.PlayCraftSound();
                 }
                 else
                     print("Not enough resources");

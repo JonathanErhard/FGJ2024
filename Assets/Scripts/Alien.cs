@@ -42,6 +42,8 @@ public class Alien : MonoBehaviour
 
         if (Hunger > 1)
             Hunger = 1;
+
+        AudioController.Instance.PlayFeedSound();
     }
 
     void Update()
