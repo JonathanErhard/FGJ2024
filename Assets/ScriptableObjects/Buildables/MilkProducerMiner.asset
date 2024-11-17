@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25cef22a50e05a7458b3f58b52bd6ad8, type: 3}
-  m_Name: WoodProducerMiner
+  m_Name: MilkProducerMiner
   m_EditorClassIdentifier: 
-  Title: Woodcutter
-  Description: Fetches wood from nearby trees
+  Title: Milker
+  Description: Milks milk from mil ponds
   MaterialCost: 5
-  Prefab: {fileID: 6815047049943566434, guid: 9508aa490ec9f304f98829e87e613978, type: 3}
+  Prefab: {fileID: 6815047049943566434, guid: 91ee8d118f0b189479f6985f82071a7a, type: 3}
   NeedsResources: []
-  ProducesResources: {fileID: 11400000, guid: 330ff3935922f4d41b059f0d8de1aafd, type: 2}
-  TimeUntilProductionInSecs: 10
+  ProducesResources: {fileID: 11400000, guid: 89b77b17d58917d4d8b1573d55984539, type: 2}
+  TimeUntilProductionInSecs: 15

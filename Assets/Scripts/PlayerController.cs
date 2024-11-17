@@ -21,9 +21,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Animator animator;
 
 
-    [SerializeField] int MovementSpeed = 5;
-    [SerializeField] float maxHealth = 60;
-    [SerializeField] float health;
+    [SerializeField] 
+    public int MovementSpeed { get; private set; } = 20;
+    [SerializeField] 
+    public float MaxHealth { get; private set; } = 60;
+    [SerializeField]
+    public float Health { get; private set; } = 60;
 
     [SerializeField] public bool IsInBase { get; set; }
 
@@ -37,6 +40,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.R) && Input.GetKey(KeyCode.T))
+            Time.timeScale = 2;
+        else
+            Time.timeScale = 1;
+
         HandleInput();
         
         Move();
@@ -94,6 +102,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void UpgradeSpeed(int amount = 10)
+    {
+        MovementSpeed += amount;
+    }
+
+    public void UpgradeHealth(int amount = 10)
+    {
+        MaxHealth += amount;
+    }
+
     private void ToggleBuildMenu()
     {
         print("Toggle build menu");
@@ -101,9 +119,9 @@ public class PlayerController : MonoBehaviour
 
     private bool DrainHealth()
     {
-        health -= 1 * Time.deltaTime;
+        Health -= 1 * Time.deltaTime;
 
-        if(health <= 0)
+        if(Health <= 0)
         {
             return false;
         }
@@ -120,7 +138,7 @@ public class PlayerController : MonoBehaviour
     {
         Rigidbody = GetComponent<Rigidbody>();
 
-        health = maxHealth;
+        Health = MaxHealth;
         IsInBase = true;
 
         print("SetUp");

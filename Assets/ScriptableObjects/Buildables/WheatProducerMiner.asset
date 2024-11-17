@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25cef22a50e05a7458b3f58b52bd6ad8, type: 3}
-  m_Name: WoodProducerMiner
+  m_Name: WheatProducerMiner
   m_EditorClassIdentifier: 
-  Title: Woodcutter
-  Description: Fetches wood from nearby trees
+  Title: Wheat Whacker
+  Description: Whacks some wheat
   MaterialCost: 5
-  Prefab: {fileID: 6815047049943566434, guid: 9508aa490ec9f304f98829e87e613978, type: 3}
+  Prefab: {fileID: 6815047049943566434, guid: e25bb4ea8c13de04ab0983cfe1a25c88, type: 3}
   NeedsResources: []
-  ProducesResources: {fileID: 11400000, guid: 330ff3935922f4d41b059f0d8de1aafd, type: 2}
+  ProducesResources: {fileID: 11400000, guid: 4eaee1254f6221b4d8ea862bce2f8272, type: 2}
   TimeUntilProductionInSecs: 10

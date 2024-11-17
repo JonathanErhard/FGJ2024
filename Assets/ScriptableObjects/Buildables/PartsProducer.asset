@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25cef22a50e05a7458b3f58b52bd6ad8, type: 3}
-  m_Name: BuildingMaterialProducer
+  m_Name: PartsProducer
   m_EditorClassIdentifier: 
-  Title: Basic Material Machine
-  Description: Creates basic building materials from wood and iron
-  MaterialCost: 5
-  Prefab: {fileID: 6815047049943566434, guid: 472e0b54bfff4fb45a93c50b9b5efddd, type: 3}
+  Title: Upgrad ePart Creator
+  Description: Creates upgrade parts from iron
+  MaterialCost: 3
+  Prefab: {fileID: 6815047049943566434, guid: 4ddd88f1e2cd0e34eb897584f05dfe41, type: 3}
   NeedsResources:
-  - {fileID: 11400000, guid: 330ff3935922f4d41b059f0d8de1aafd, type: 2}
   - {fileID: 11400000, guid: 02873af90a131a74a87b0c576de32a64, type: 2}
-  ProducesResources: {fileID: 11400000, guid: 71721076e4fda1a43945306efba9bc0e, type: 2}
-  TimeUntilProductionInSecs: 20
+  ProducesResources: {fileID: 11400000, guid: 27261162a89d7dd4492916b5b1dd94ca, type: 2}
+  TimeUntilProductionInSecs: 30
