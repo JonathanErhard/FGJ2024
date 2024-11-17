@@ -37,7 +37,9 @@ public class CollectableCollector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if((player.transform.position - this.gameObject.transform.position).magnitude > 2*maxDistance) return;
         is_interactable = (player.transform.position - this.gameObject.transform.position).magnitude <= maxDistance;
+        
         InteractText.SetActive(is_interactable);
 
         if(is_interactable && Input.GetKeyDown(KeyCode.E)){
