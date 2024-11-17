@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25cef22a50e05a7458b3f58b52bd6ad8, type: 3}
+  m_Name: WheatProducerMiner
+  m_EditorClassIdentifier: 
+  Title: Wheat Whacker
+  Description: Whacks some wheat
+  MaterialCost: 5
+  Prefab: {fileID: 6815047049943566434, guid: e25bb4ea8c13de04ab0983cfe1a25c88, type: 3}
+  NeedsResources: []
+  ProducesResources: {fileID: 11400000, guid: 4eaee1254f6221b4d8ea862bce2f8272, type: 2}
+  TimeUntilProductionInSecs: 10

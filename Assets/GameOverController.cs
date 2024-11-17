@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameOverController : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class GameOverController : MonoBehaviour
 
     public TMPro.TextMeshProUGUI TextGameOver;
     public TMPro.TextMeshProUGUI TextTimer;
+
+    private float _timer = 3;
 
     void Start()
     {
@@ -18,9 +21,11 @@ public class GameOverController : MonoBehaviour
         TextGameOver.text = Success ? "You did it!" : "You lost!";
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (_timer >= 0)
+            _timer -= Time.deltaTime;
+        else if(Input.anyKeyDown)
+            SceneManager.LoadScene("PlayerScene");
     }
 }
