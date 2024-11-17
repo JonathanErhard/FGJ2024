@@ -30,14 +30,21 @@ public class BuildCursor : MonoBehaviour
         // Build on click if not over UI
         if(Input.GetMouseButtonDown(0))
             Build();
+
+        if(Input.GetMouseButtonDown(1))
+            gameObject.SetActive(false);
     }
-    
+
     public void Build()
     {
         if (EventSystem.current.IsPointerOverGameObject() || CurrentBuildable == null)
             return;
 
         Instantiate(CurrentBuildable.Prefab, transform.position, transform.rotation);
+
+        InventoryController.Instance.RemoveBuildable(CurrentBuildable);
+
+        gameObject.SetActive(false);
     }
 
     public void Kill()

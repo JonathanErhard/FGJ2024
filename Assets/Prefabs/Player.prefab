@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4012135536515143284}
   - component: {fileID: 414776207601032680}
   - component: {fileID: 4279084171825457679}
+  - component: {fileID: 3358315511491489977}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -49,8 +50,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerModel: {fileID: 3024599086383559387}
-  MovementSpeed: 20
   animator: {fileID: 8842761557839012514}
+  MovementSpeed: 20
+  maxHealth: 60
+  health: 0
 --- !u!114 &4012135536515143284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,6 +114,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.5454764, y: 7.753246, z: 6.171814}
   m_Center: {x: 0, y: 3.3991787, z: 0}
+--- !u!114 &3358315511491489977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3024599086383559387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8b22750d89557649baa9c172b6da345, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnStateUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  Buildables: []
 --- !u!1001 &1069026700609775738
 PrefabInstance:
   m_ObjectHideFlags: 0

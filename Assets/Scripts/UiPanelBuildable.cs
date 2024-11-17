@@ -12,13 +12,22 @@ public class UiPanelBuildable : MonoBehaviour
     [SerializeField]
     private Image _spriteImage;
 
+    private bool _addTextSet;
+
     void Start()
     {
-        _textTitle.text = BuildableSo.Title;
+        if (!_addTextSet)
+            _textTitle.text = BuildableSo.Title;
 
         // Generate preview of buildable
         RuntimePreviewGenerator.OrthographicMode = true;
         var texturePreview = RuntimePreviewGenerator.GenerateModelPreview(BuildableSo.Prefab.transform);
         _spriteImage.sprite = Sprite.Create(texturePreview, new Rect(0, 0, texturePreview.width, texturePreview.height), new Vector2(0.5f, 0.5f));
+    }
+
+    public void SetAdditionalText(string text)
+    {
+        _addTextSet = true;
+        _textTitle.SetText($"{BuildableSo.Title} ({text})");
     }
 }

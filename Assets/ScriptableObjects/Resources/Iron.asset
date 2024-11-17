@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: Iron
   m_EditorClassIdentifier: 
   Title: Iron
-  Image: {fileID: 21300000, guid: e2fdecbd081062646bea98a7e6bcd8d0, type: 3}
-  MaxCount: 5
+  Image: {fileID: 21300000, guid: 00ef240b4d5e8154a81ca235078f74cf, type: 3}
   SfxCollect: {fileID: 0}

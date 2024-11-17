@@ -6,13 +6,6 @@ public class BuildableSo : ScriptableObject
 {
     public string Title;
     public string Description;
+    public int MaterialCost = 5;
     public GameObject Prefab;
-    public List<BuildableRequiredResource> RequiredResources;
-
-    public class BuildableRequiredResource
-    {
-        // TODO: Make this ResourceSo
-        public string Resource { get; set; }
-        public int Amount { get; set; }
-    }
 }

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25cef22a50e05a7458b3f58b52bd6ad8, type: 3}
+  m_Name: WoodProducerMiner
+  m_EditorClassIdentifier: 
+  Title: Woodcutter
+  Description: Fetches wood from nearby trees
+  MaterialCost: 5
+  Prefab: {fileID: 6815047049943566434, guid: 545b46c325edb964f887068230aa113c, type: 3}
+  NeedsResources: []
+  ProducesResources: {fileID: 11400000, guid: 330ff3935922f4d41b059f0d8de1aafd, type: 2}
+  TimeUntilProductionInSecs: 10

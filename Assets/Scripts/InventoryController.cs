@@ -15,7 +15,24 @@ public class InventoryController : MonoBehaviour
 
     public UnityEvent OnStateUpdate = new UnityEvent();
 
-    public Dictionary<ResourceSo, int> ResourcesDict = new Dictionary<ResourceSo, int>();
+    public Dictionary<ResourceSo, int> ResourcesDict = new();
+    public List<BuildableSo> Buildables = new();
+
+    public void AddBuildable(BuildableSo buildable)
+    {
+        Buildables.Add(buildable);
+        BuildUiController.Instance.FillBuildables();
+    }
+
+    public bool RemoveBuildable(BuildableSo buildable)
+    {
+        if (!Buildables.Contains(buildable))    
+            return false;
+
+        Buildables.Remove(buildable);
+        BuildUiController.Instance.FillBuildables();
+        return true;
+    }
 
     public bool AddResource(ResourceSo resource, int count)
     {
@@ -56,6 +73,18 @@ public class InventoryController : MonoBehaviour
                 return false;
             }
         }
+        OnStateUpdate.Invoke();
+        return true;
+    }
+
+    public bool HasResource(ResourceSo resource, int count)
+    {
+        if (!ResourcesDict.ContainsKey(resource) || ResourcesDict[resource] < count)
+        {
+            OnStateUpdate.Invoke();
+            return false;
+        }
+
         OnStateUpdate.Invoke();
         return true;
     }

@@ -12,11 +12,14 @@ public class UiBuildableProducerInfo : MonoBehaviour
     public Button ButtonProvideResources;
     public Button ButtonTakeResources;
 
+    public TMPro.TextMeshProUGUI TextBuildableTitle;
     public Transform TransRequiredResources;
     public Image ImageProducesResource;
     public TMPro.TextMeshProUGUI TextProducesResourceTitle;
     public Image ImageReadyResource;
     public TMPro.TextMeshProUGUI TextReadyResourceTitle;
+
+    public string ActivityMessage = "Active";
 
     private BuildableProducerSo _buildableSo;
 
@@ -24,6 +27,8 @@ public class UiBuildableProducerInfo : MonoBehaviour
     {
         Buildable ??= GetComponentInParent<BuildableProducer>();
         _buildableSo = Buildable.BuildableSo;
+
+        TextBuildableTitle.text = $"{_buildableSo.Title} ({ActivityMessage})";
 
         foreach (var resource in _buildableSo.NeedsResources)
         {
@@ -41,8 +46,6 @@ public class UiBuildableProducerInfo : MonoBehaviour
         // Update ui on buildable state update
         Buildable.OnStateUpdate.AddListener(() =>
         {
-            print("OnStateUpdate");
-
             ButtonProvideResources.interactable =
                     !Buildable.IsWorking &&
                     InventoryController.Instance.HasResources(_buildableSo.NeedsResources);

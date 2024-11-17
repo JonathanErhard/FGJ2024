@@ -5,20 +5,28 @@ using UnityEngine.UI;
 
 public class BuildUiController : MonoBehaviour
 {
+    #region singleton region
+    public static BuildUiController Instance;
+    public BuildUiController()
+    {
+        Instance = this;
+    }
+    #endregion
 
     public Transform BuildableList;
     public UiPanelBuildable PrefabBuildablePanel;
 
-    public List<BuildableSo> Buildables = new();
-
-    void Start()
+    void OnEnable()
     {
         FillBuildables();
     }
 
     public void FillBuildables()
     {
-        foreach(var buildable in Buildables)
+        foreach (var buttonBuildable in BuildableList.GetComponentsInChildren<Button>())
+            Destroy(buttonBuildable.gameObject);
+
+        foreach (var buildable in InventoryController.Instance.Buildables)
         {
             var panel = Instantiate(PrefabBuildablePanel, BuildableList);
             panel.BuildableSo = buildable;
@@ -26,6 +34,7 @@ public class BuildUiController : MonoBehaviour
             var button = panel.GetComponent<Button>();
             button.onClick.AddListener(() =>
             {
+                gameObject.SetActive(true);
                 BuildController.Instance.SetBuildable(buildable);
             });
         }

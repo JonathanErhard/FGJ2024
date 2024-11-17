@@ -76,9 +76,6 @@ public class PlayerController : MonoBehaviour
                 horizontal *= 0.75f;
             }
 
-            print(vertical + "/" + horizontal);
-
-
             float adjustedHorizontalInput = (horizontal + vertical) / Mathf.Sqrt(2);
             float adjustedVerticalInput = (vertical - horizontal) / Mathf.Sqrt(2);
 
