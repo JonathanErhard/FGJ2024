@@ -652,13 +652,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab8df194632ef7f3ea8ccf8314f0f81d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractText: {fileID: 0}
+  InteractText: {fileID: 1481809671}
   type: 1
   id: 1
   maxDistance: 10
   player: {fileID: 371784651}
   is_interactable: 0
-  p: {fileID: 0}
+  p: {fileID: 950623503}
   cone: {fileID: 1554387544}
 --- !u!1001 &235692783
 PrefabInstance:
@@ -1201,13 +1201,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab8df194632ef7f3ea8ccf8314f0f81d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractText: {fileID: 0}
+  InteractText: {fileID: 1481809671}
   type: 1
   id: 0
   maxDistance: 10
   player: {fileID: 371784651}
   is_interactable: 0
-  p: {fileID: 0}
+  p: {fileID: 950623503}
   cone: {fileID: 377025208}
 --- !u!1001 &553615911
 PrefabInstance:
@@ -1303,13 +1303,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab8df194632ef7f3ea8ccf8314f0f81d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractText: {fileID: 0}
+  InteractText: {fileID: 1481809671}
   type: 0
   id: 2
   maxDistance: 10
   player: {fileID: 371784651}
   is_interactable: 0
-  p: {fileID: 0}
+  p: {fileID: 950623503}
   cone: {fileID: 111609158}
 --- !u!1 &597463473 stripped
 GameObject:
@@ -1828,6 +1828,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6276182538229132085, guid: 7511702267604284eb93b91a1a9c4215, type: 3}
   m_PrefabInstance: {fileID: 5017336930155569899}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &950623503 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1054807202359258339, guid: 7511702267604284eb93b91a1a9c4215, type: 3}
+  m_PrefabInstance: {fileID: 5017336930155569899}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950623501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba8d1a73dcc6bd9e8a2d936d1628e816, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &968749596 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8b22f83cc87293245b78a864c7bbe78c, type: 3}
@@ -2114,13 +2125,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab8df194632ef7f3ea8ccf8314f0f81d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractText: {fileID: 0}
+  InteractText: {fileID: 1481809671}
   type: 1
   id: 3
   maxDistance: 10
   player: {fileID: 371784651}
   is_interactable: 0
-  p: {fileID: 0}
+  p: {fileID: 950623503}
   cone: {fileID: 1482378186}
 --- !u!1001 &1164659894
 PrefabInstance:
@@ -3140,14 +3151,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab8df194632ef7f3ea8ccf8314f0f81d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractText: {fileID: 0}
+  InteractText: {fileID: 1481809671}
   type: 0
   id: 3
   maxDistance: 10
   player: {fileID: 371784651}
   is_interactable: 0
-  p: {fileID: 0}
+  p: {fileID: 950623503}
   cone: {fileID: 1458334835}
+--- !u!1 &1481809671 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1539166817420121984, guid: 7511702267604284eb93b91a1a9c4215, type: 3}
+  m_PrefabInstance: {fileID: 5017336930155569899}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1482378186 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9013638940889411661, guid: 659b7f9fc33c08e15aee0790e2c290a1, type: 3}
@@ -4139,13 +4155,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab8df194632ef7f3ea8ccf8314f0f81d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractText: {fileID: 0}
+  InteractText: {fileID: 1481809671}
   type: 1
   id: 2
   maxDistance: 10
   player: {fileID: 371784651}
   is_interactable: 0
-  p: {fileID: 0}
+  p: {fileID: 950623503}
   cone: {fileID: 1779918247}
 --- !u!1001 &1764843173
 PrefabInstance:
@@ -4675,13 +4691,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab8df194632ef7f3ea8ccf8314f0f81d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractText: {fileID: 0}
+  InteractText: {fileID: 1481809671}
   type: 0
   id: 1
   maxDistance: 10
   player: {fileID: 371784651}
   is_interactable: 0
-  p: {fileID: 0}
+  p: {fileID: 950623503}
   cone: {fileID: 844933676}
 --- !u!1 &1920190435 stripped
 GameObject:
@@ -5111,13 +5127,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab8df194632ef7f3ea8ccf8314f0f81d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractText: {fileID: 0}
+  InteractText: {fileID: 1481809671}
   type: 0
   id: 0
   maxDistance: 10
   player: {fileID: 371784651}
   is_interactable: 0
-  p: {fileID: 0}
+  p: {fileID: 950623503}
   cone: {fileID: 85610234}
 --- !u!1001 &5017336930155569899
 PrefabInstance:
@@ -5311,6 +5327,46 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5940588283357418621, guid: 7511702267604284eb93b91a1a9c4215, type: 3}
+      propertyPath: CraftableBuildings.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940588283357418621, guid: 7511702267604284eb93b91a1a9c4215, type: 3}
+      propertyPath: CraftableBuildings.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0692cbf99552a0e44b796791a0b02840, type: 2}
+    - target: {fileID: 5940588283357418621, guid: 7511702267604284eb93b91a1a9c4215, type: 3}
+      propertyPath: CraftableBuildings.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: ef45123fe9883e248b1e4c69930a2def, type: 2}
+    - target: {fileID: 5940588283357418621, guid: 7511702267604284eb93b91a1a9c4215, type: 3}
+      propertyPath: CraftableBuildings.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: f55c4ddff95947e419fd20d3ec5f14c5, type: 2}
+    - target: {fileID: 5940588283357418621, guid: 7511702267604284eb93b91a1a9c4215, type: 3}
+      propertyPath: CraftableBuildings.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 90f16cdb989ab84438c245ef87f85f47, type: 2}
+    - target: {fileID: 5940588283357418621, guid: 7511702267604284eb93b91a1a9c4215, type: 3}
+      propertyPath: CraftableBuildings.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5f20e799b209f144a99c8627471d1f76, type: 2}
+    - target: {fileID: 5940588283357418621, guid: 7511702267604284eb93b91a1a9c4215, type: 3}
+      propertyPath: CraftableBuildings.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: d60c8b2974fbbc04bba36e7612ebf16f, type: 2}
+    - target: {fileID: 5940588283357418621, guid: 7511702267604284eb93b91a1a9c4215, type: 3}
+      propertyPath: CraftableBuildings.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: 9bb2f9c9f2602874ea22a5511604029f, type: 2}
+    - target: {fileID: 5940588283357418621, guid: 7511702267604284eb93b91a1a9c4215, type: 3}
+      propertyPath: CraftableBuildings.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8db3ab01459307a4a8cc9298042f32cc, type: 2}
+    - target: {fileID: 5940588283357418621, guid: 7511702267604284eb93b91a1a9c4215, type: 3}
+      propertyPath: CraftableBuildings.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: d901f25f64e995e4abd3c31a84d15045, type: 2}
     - target: {fileID: 6004731173470034013, guid: 7511702267604284eb93b91a1a9c4215, type: 3}
       propertyPath: m_fontAsset
       value: 
